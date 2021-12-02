@@ -44,13 +44,8 @@ public class NaverSearchController {
 	}
 	
 	@RequestMapping("/search/page")
-	public String pagescroll() {
-		String key = service.keyword;
-		int start = service.start;
+	public void pagescroll() {
 		
-		model.addAttribute("list",list);
-		System.out.println(key);
-		return "/search/printSearch";
 	}
 	
 	

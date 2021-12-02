@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>오늘 날씨 어때?</title>
-
     <link rel="icon" href="https://us.louisvuitton.com/static_lvfront/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -18,7 +17,7 @@
 	<div id="nav_wrap">
 	    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	        <div class="container-fluid">
-	            <a class="navbar-brand" href="#">
+	            <a class="navbar-brand" href="index">
 	                <h2>오늘 모입조?</h2>
 	            </a>
 	            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

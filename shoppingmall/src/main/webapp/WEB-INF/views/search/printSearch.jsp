@@ -18,7 +18,7 @@
 	<div id="nav_wrap">
 		 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	        <div class="container-fluid">
-	            <a class="navbar-brand" href="#">
+	            <a class="navbar-brand" href="index">
 	                <h2>오늘 모입조?</h2>
 	            </a>
 	            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
