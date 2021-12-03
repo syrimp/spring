@@ -7,10 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>오늘 날씨 어때?</title>
+    <link href="/resources/style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="https://us.louisvuitton.com/static_lvfront/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link href="/resources/style.css" rel="stylesheet" type="text/css" />
+    
 </head>
 
 <body>
@@ -38,8 +39,8 @@
 	                    </li>
 	                </ul>
 	                <div id="smallNav">
-	                    <a href="#"><span class="bef_login">Join</span></a>
-	                    <a href="#"><span class="bef_login">Login</span></a>
+	                    <a href="/search/join"><span class="bef_login">Join</span></a>
+	                    <a href="/search/login"><span class="bef_login">Login</span></a>
 	                    <a href="#"><span class="af_login">Cart</span></a>
 	                </div>
 	                <form class="d-flex" action="/search/submit">

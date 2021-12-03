@@ -48,6 +48,16 @@ public class NaverSearchController {
 		
 	}
 	
+	@RequestMapping("/search/join")
+	public void join() {
+		
+	}
+	@RequestMapping("/search/login")
+	public void login() {
+		
+	}
+	
+	
 	
 	
 	
