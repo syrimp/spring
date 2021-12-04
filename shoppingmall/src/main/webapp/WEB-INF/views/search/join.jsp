@@ -1,71 +1,122 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset="UTF-8">
-<meta name="viewport" content="width=device-width",initial-scale="1">
-<link rel="stylesheet"href="/resources/bootstrap.css">
-<title> 오늘 모입조 login 페이지</title>
-<link rel="icon" href="https://us.louisvuitton.com/static_lvfront/favicon.ico" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-<link href="/resources/style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-	<div id="nav_wrap">
-	    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	        <div class="container-fluid">
-	            <a class="navbar-brand" href="index">
-	                <h2>오늘 모입조?</h2>
-	            </a>
-	            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-	                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-	                aria-label="Toggle navigation">
-	                <span class="navbar-toggler-icon"></span>
-	            </button>
-	            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="#">WOMENSTYLE</a>
-	                    </li>
-	                    <li class="nav-item dropdown">
-	                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-	                            aria-expanded="false">
-	                            MEN
-	                        </a>
-	                    </li>
-	                </ul>
-	                <div id="smallNav">
-	                    <a href="/search/join"><span class="bef_login">Join</span></a>
-	                    <a href="/search/login"><span class="bef_login">Login</span></a>
-	                    <a href="#"><span class="af_login">Cart</span></a>
-	                </div>
-	                <form class="d-flex" action="/search/submit">
-	                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" required />
-	                    <button class="btn btn-outline-success" type="submit"><img src="/resources/search (1).png"></button>
-	                </form>
-	            </div>
-	        </div>
-	    </nav>
-    </div>
-	<div class="join_container">
-		<div class="size">
-			<form id="join_form" method="post" action="joinAction.jsp">
-				<h1>회원가입</h1> <!-- 아이디, 비밀번호, 이름, 휴대폰번호, 주소, 이메일 -->
-				<div class="form-group">
-					<input type="text"  placeholder="아이디" name="ID" maxlength="20" required/><br />
-					<input type="password"  placeholder="비밀번호" name="Password" maxlength="20" required/><br />
-					<input type="text" placeholder="이름" name="Name" maxlength="20" required/><br />
-					<input type="tel"  placeholder="휴대폰 번호" name="phone" maxlength="20" required/><br />
-					<input type="email"  placeholder="이메일" name="Email" maxlength="20" required/><br />
-					<input type="text"  placeholder="주소" name="address" required/><br />
-					<input type="submit" class="btn btn-primary" value="회원가입">
-				</div>
-			</form>
-		</div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="/resources/bootstrop.js"></script>
-</body>
+<!DOCTYPE html> <html lang="ko"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title> 회원가입 </title> 
+<!-- Bootstrap CSS --> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+crossorigin="anonymous">
+
+
+    <style>
+
+        body {
+            min-height: 100vh;
+  
+            background: -webkit-gradient(linear, left bottom, right top, from(#92b5db),to(#1d466c));
+            background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); 
+            background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+            background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);
+
+ } 
+  
+    .input-form { 
+    max-width: 680px;
+    margin-top: 80px;
+    padding: 32px;
+
+    background: #fff; 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; 
+    -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15) 
+      } 
+      
+    </style> 
+      
+</head> 
+    
+<body> 
+    <div class="container">
+            
+        <div class="input-form-backgroud row"> 
+                
+            <div class="input-form col-md-12 mx-auto">
+                    
+                    
+                <h4 class="mb-3">모입조 회원가입</h4>
+                    
+                    
+                <form class="validation-form" novalidate>
+                        
+                        
+                <div class="row"> 
+                            
+                <div class="col-md-6 mb-3"> 
+                            
+                <label for="name">이름</label>
+                                
+                <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                <div class="invalid-feedback"> 이름을 입력해주세요. 
+
+            </div> 
+                </div> 
+                <div class="col-md-6 mb-3"> 
+                <label for="nickname">전화번호</label> 
+                <input type="text" class="form-control" id="nickname" placeholder="" value="" required>
+                <div class="invalid-feedback"> 전화번호를 입력해주세요. </div> 
+            </div> 
+        </div> 
+            <div class="mb-3"> 
+                <label for="email">이메일</label> 
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                <div class="invalid-feedback"> 이메일을 입력해주세요. </div> 
+            </div>
+                <div class="mb-3">
+                    <label for="address">주소</label> 
+                    <input type="text" class="form-control" id="address" placeholder="#" required>
+                    <div class="invalid-feedback"> 주소를 입력해주세요. </div>
+                    </div>
+                    <div class="mb-3">
+                    <label for="address2">상세주소<span class="text-muted">&nbsp;(필수 아님)</span>
+                    </label>
+                        
+                    <input type="text" class="form-control" id="address2" placeholder="상세주소를 입력해주세요."> </div> <div class="row"> 
+                    <div class="col-md-8 mb-3">             
+        </div> 
+        </div> 
+        <hr class="mb-4"> 
+        <div class="custom-control custom-checkbox">
+             <input type="checkbox" class="custom-control-input" id="aggrement" required> 
+             <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.
+
+            </label> 
+            </div> 
+            <div class="mb-4">
+
+        </div> 
+        <button class="btn btn-primary btn-lg btn-block" type="submit">가입 완료</button> 
+        </form> 
+    </div> 
+</div> 
+<footer class="my-3 text-center text-small">
+<p class="mb-1">&copy; KOREA</p> 
+</footer>
+</div>
+
+<script>
+
+window.addEventListener('load', () => { const forms = document.getElementsByClassName('validation-form'); Array.prototype.filter.call(forms, (form) => { form.addEventListener('submit', function (event) { if (form.checkValidity() === false) { event.preventDefault(); event.stopPropagation(); } form.classList.add('was-validated'); }, false); }); }, false);
+      
+</script>
+
+</body> 
 </html>
+
+
