@@ -177,8 +177,20 @@ footer {
 
 
 
-/*---------------------------------join, login-----------------*/
+/*---------------------------------게시판----------------*/
 
+#board_wrap{
+	margin:10rem auto;
+	width:80vw;
+	text-align: center;
+}
+#list_container{
+	
+	
+}
 
-
+#list_container .list_table{
+	margin: 0 auto;
+	text-align: center;
+}
 
