@@ -14,12 +14,23 @@
 						<th>회원 아이디</th>
 						<th>작성일</th>
 						<th>수정일</th>
-					</tr>	
+					</tr>
 				</thead>
+					
+				<tbody>
+				
+				<c:forEach var="temp" items="${list }">
+					<tr>
+						<td><c:out value="${temp.bno }" /></td>	
+						<td><a href="/get/????${temp.bno}"><c:out value="${temp.title }" /></a></td>
+						<td><c:out value="${temp.id }"/></td>	
+						<td><c:out value="${temp.regdate }" /></td>	
+						<td><c:out value="${temp.updatedate }" /></td>
+					</tr>
+				</c:forEach>
+				</tbody>
 			</table>
-
 		</div>
 	</div>
-
 </body>
 </html>

@@ -59,7 +59,7 @@
 	
 	<div id="print_result">
 		<div class="items">
-			<c:forEach var="temp" items="${list }" >
+			<c:forEach var="temp" items="${result }" >
 				<div class="item">
 					<a href="${temp.link }">
 						<img alt="${temp.title }" src="${temp.image }" /><br/>

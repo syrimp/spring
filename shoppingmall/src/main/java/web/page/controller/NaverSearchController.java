@@ -38,7 +38,7 @@ public class NaverSearchController {
 		String key = service.keyword;
 		int start = service.start;
 		ArrayList<itemVO> list = service.searchResult(key, start);
-		model.addAttribute("list",list);
+		model.addAttribute("result",list);
 		rttr.addAttribute("start", start);
 		return "/search/printSearch";	
 	}
