@@ -36,8 +36,8 @@
 	                    </li>
 	                </ul>
 	                <div id="smallNav">
-	                    <a href="/search/join"><span class="bef_login">Join</span></a>
-	                    <a href="/search/login"><span class="bef_login">Login</span></a>
+	                    <a href="/profile/join"><span class="bef_login">Join</span></a>
+	                    <a href="/profile/login"><span class="bef_login">Login</span></a>
 	                    <a href="#"><span class="af_login">Cart</span></a>
 	                </div>
 	                <form class="d-flex" action="/search/submit">

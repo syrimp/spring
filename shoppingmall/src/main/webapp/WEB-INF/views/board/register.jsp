@@ -14,7 +14,5 @@
 					</tr>
 				</form>
 			</table>
-		</div>
-	</div>
 </body>
 </html>

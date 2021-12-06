@@ -20,12 +20,12 @@ public class NaverSearchController {
 	
 	NaverShoppingAPIService service;
 
-	@RequestMapping("/search/index")
+	@RequestMapping("/index")
 	public void index() {
 	
 	}
 	
-	@RequestMapping("/search/submit")
+	@RequestMapping("/submit")
 	public String red(String keyword) {
 		service.keyword = keyword;
 		System.out.println(keyword);
@@ -33,7 +33,7 @@ public class NaverSearchController {
 	}
 	
 
-	@RequestMapping("/search/result")
+	@RequestMapping("/result")
 	public String result(Model model , RedirectAttributes rttr) {
 		String key = service.keyword;
 		int start = service.start;
@@ -43,19 +43,12 @@ public class NaverSearchController {
 		return "/search/printSearch";	
 	}
 	
-	@RequestMapping("/search/page")
+	@RequestMapping("/page")
 	public void pagescroll() {
 		
 	}
 	
-	@RequestMapping("/search/join")
-	public void join() {
-		
-	}
-	@RequestMapping("/search/login")
-	public void login() {
-		
-	}
+	
 	
 	
 	
