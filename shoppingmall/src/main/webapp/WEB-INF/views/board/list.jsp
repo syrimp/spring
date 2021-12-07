@@ -3,10 +3,10 @@
 
 <%@include file="../includes/header.jsp" %>
 	<div id="board_wrap">
-		<div id="list_container">
-			<h1>Q&A</h1>
-			
-			<table class="list_table">
+	
+		<h1>고객게시판</h1><br />
+		<div id="list_container">	
+			<table id="list_table">
 				<thead>
 					<tr>
 						<th>글 번호</th>
@@ -20,9 +20,9 @@
 				<tbody>
 				
 				<c:forEach var="temp" items="${list }">
-					<tr>
+					<tr class="tr_s">
 						<td><c:out value="${temp.bno }" /></td>	
-						<td><a href="/get/????${temp.bno}"><c:out value="${temp.title }" /></a></td>
+						<td><a href="/board/get?bno=${temp.bno}"><c:out value="${temp.title }" /></a></td>
 						<td><c:out value="${temp.id }"/></td>	
 						<td><c:out value="${temp.regdate }" /></td>	
 						<td><c:out value="${temp.updatedate }" /></td>
@@ -31,6 +31,10 @@
 				</tbody>
 			</table>
 		</div>
+		<form action="" id="list_form">
+			<a><button type="button" id="register" formaction="">글 등록</button></a>
+			
+		</form>
 	</div>
 </body>
 </html>

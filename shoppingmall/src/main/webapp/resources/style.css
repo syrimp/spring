@@ -185,12 +185,53 @@ footer {
 	text-align: center;
 }
 #list_container{
-	
+  	margin: 5rem;
+  	padding:2rem;
 	
 }
 
-#list_container .list_table{
+#list_table{
 	margin: 0 auto;
 	text-align: center;
+	width : max-content;
+	height: max-content;
+	border-collapse:collapse;
 }
 
+table thead tr th{
+	border: 1px solid lightgray;
+    background-color: ivory;
+	line-height: 2rem;
+    padding: 0 2rem;
+}
+
+table tbody .tr_s td{
+    border: 1px solid lightgray;
+	line-height: 2rem;
+    padding: 0 2rem;
+}
+
+.center{
+	position: center;
+	margin: 5rem auto;
+	padding: 4rem;
+	left: 50%;
+	
+}
+
+
+.jumbotron{
+	position:center;
+	margin:0 auto;
+}
+
+
+
+
+
+#input_id, #input_pw, #login_btn{
+	width: 50rem;
+	height: 3rem;
+	margin: 0.3rem;
+	
+}

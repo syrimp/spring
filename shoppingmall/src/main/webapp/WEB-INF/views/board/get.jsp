@@ -23,6 +23,11 @@
 						<th>내용</th><td>${board.content }</td>
 					</tr>
 			</table>
+			
+			<form>
+				<button type="submit" formaction="/board/modify?bno=${board.bno }" formmethod="get">수정</button>
+				<button type="submit" formaction="/board/remove?bno=${board.bno }" formmethod="post">삭제</button>
+			</form>
 		</div>
 	</div>
 

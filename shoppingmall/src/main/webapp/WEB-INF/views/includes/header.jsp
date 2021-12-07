@@ -6,10 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>오늘 날씨 어때?</title>
-<link href="/resources/style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="https://us.louisvuitton.com/static_lvfront/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link href="/resources/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div id="nav_wrap">
@@ -34,14 +34,14 @@
 	                </ul>
 	                <div id="smallNav">
 	                	<c:if test="${profile == null}">
-		                    <a href="/profile/join"><span class="bef_login">Join</span></a>
-		                    <a href="/profile/login"><span class="bef_login">Login</span></a>
-		                    <a href="#"><span class="af_login">Book</span></a>
+		                    <a href="/profile/join"><span>Join</span></a>
+		                    <a href="/profile/login"><span>Login</span></a>
+		                    <a href="/" class="a_beflog"><span>Book</span></a>
 	                    </c:if>
 	                    <c:if test="${profile != null}">
 	                    	<span>${profile.id }님 환영합니다.</span>
-		                    <a href="/profile/logout"><span class="bef_login">Logout</span></a>
-		                    <a href="#"><span class="af_login">Book</span></a>
+		                    <a href="/profile/logout"><span>Logout</span></a>
+		                    <a href="/search/book" class="a_aflog"><span>Book</span></a>
 	                    </c:if>
 	                </div>
 	                <form class="d-flex" action="/search/submit">
@@ -52,3 +52,13 @@
 	        </div>
 	    </nav>
     </div>
+    <script>
+    	const book_a = document.querySelector(".a_beflog");
+    	
+    	function notMember(){
+    		alert("로그인 후 이용가능한 기능입니다.");
+    	}
+    	
+    	
+    	book_a.addEventListener("click", notMember);
+    </script>
