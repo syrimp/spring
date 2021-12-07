@@ -6,7 +6,7 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-				<form method="post" action="/login">
+				<form method="post" action="/profile/login">
 					<h1 style="text-align: center;">LOGIN</h1>
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="ID" name="id" maxlength="20">
@@ -14,11 +14,21 @@
 					<div class="form-group">
 						<input type="password" class="form-control" placeholder="비밀번호" name="pw" maxlength="20">
 					</div>
-					<input type="submit"class="btn btn-primary form-control"value="login">
+					<input type="submit" id="login_btn" class="btn btn-primary form-control"value="login">
 				</form>
 			</div>
 		</div>
 	</div>
+		<script type="text/javascript">
+			const login_btn = document.querySelector("#login_btn");
+			function loginState(){
+			    if(${profile} == null && ${msg} == false){
+			    	
+			        alert("아이디나 비밀번호가 다릅니다.");
+			    }
+			}
+			login_btn.addEventListener("click", loginState);
+		</script>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="/resources/bootstrop.js"></script>
 </body>

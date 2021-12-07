@@ -19,11 +19,6 @@ import web.page.service.NaverShoppingAPIService;
 public class NaverSearchController {
 	
 	NaverShoppingAPIService service;
-
-	@RequestMapping("/index")
-	public void index() {
-	
-	}
 	
 	@RequestMapping("/submit")
 	public String red(String keyword) {

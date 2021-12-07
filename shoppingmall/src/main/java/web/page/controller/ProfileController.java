@@ -2,11 +2,16 @@ package web.page.controller;
 
 import web.page.domain.profileVO;
 import web.page.service.profileService;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.AllArgsConstructor;
 
@@ -33,11 +38,25 @@ public class ProfileController {
 	}
 	
 	@PostMapping("/login")
-	public profileVO login(String id, String pw) {
-		return service.login(id, pw);
+	public String login(String id, String pw, HttpServletRequest req, RedirectAttributes rttr) {
+		HttpSession session = req.getSession();
+		profileVO login = service.login(id, pw);
+		
+		if(login==null) {
+			session.setAttribute("profile", null);
+			rttr.addFlashAttribute("msg", false);
+			return "redirect:/profile/login";
+		} else {
+			session.setAttribute("profile", login);
+			return "redirect:/";
+		}
 	}	
 	
-	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
 	
 	
 }

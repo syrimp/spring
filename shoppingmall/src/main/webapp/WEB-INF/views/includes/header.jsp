@@ -15,7 +15,7 @@
 	<div id="nav_wrap">
 	    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	        <div class="container-fluid">
-	            <a class="navbar-brand" href="/search/index">
+	            <a class="navbar-brand" href="/">
 	                <h2>오늘 모입조?</h2>
 	            </a>
 	            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -36,9 +36,16 @@
 	                    </li>
 	                </ul>
 	                <div id="smallNav">
-	                    <a href="/profile/join"><span class="bef_login">Join</span></a>
-	                    <a href="/profile/login"><span class="bef_login">Login</span></a>
-	                    <a href="#"><span class="af_login">Cart</span></a>
+	                	<c:if test="${profile == null}">
+		                    <a href="/profile/join"><span class="bef_login">Join</span></a>
+		                    <a href="/profile/login"><span class="bef_login">Login</span></a>
+		                    <a href="#"><span class="af_login">Book</span></a>
+	                    </c:if>
+	                    <c:if test="${profile != null}">
+	                    	<span>${profile.id }님 환영합니다.</span>
+		                    <a href="/profile/logout"><span class="bef_login">Logout</span></a>
+		                    <a href="#"><span class="af_login">Book</span></a>
+	                    </c:if>
 	                </div>
 	                <form class="d-flex" action="/search/submit">
 	                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" required />
