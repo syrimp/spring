@@ -48,6 +48,7 @@ public class ProfileController {
 			return "redirect:/profile/login";
 		} else {
 			session.setAttribute("profile", login);
+			rttr.addAttribute("sucess", true);
 			return "redirect:/";
 		}
 	}	

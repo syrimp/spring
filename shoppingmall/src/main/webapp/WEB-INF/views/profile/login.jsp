@@ -22,9 +22,14 @@
 		<script type="text/javascript">
 			const login_btn = document.querySelector("#login_btn");
 			function loginState(){
-			    if(${profile} == null && ${msg} == false){
-			    	
-			        alert("아이디나 비밀번호가 다릅니다.");
+				const profile = "${profile}";
+				const msg = "${msg}";
+			    if(profile=='' && msg == ''){
+			    	if(!${success}){
+			    		alert("아이디나 비밀번호가 다릅니다.");
+			    	}
+			    } else if(sessionStorage.getItem("profile")==null && msg == "false"){
+			    	alert("아이디나 비밀번호가 다릅니다.");
 			    }
 			}
 			login_btn.addEventListener("click", loginState);
