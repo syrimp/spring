@@ -30,14 +30,19 @@
 	                        <a class="nav-link" href="#">STYLE</a>
 	                    </li>
 	                    <li class="nav-item dropdown">
-	                        <a class="nav-link" href="../board/list">고객게시판</a>
+	                    <c:if test="${profile == null}">
+	                        <a class="nav-link bo_beflog" href="">고객게시판</a>
+	                     </c:if>
+	                     <c:if test="${profile != null}">
+	                        <a class="nav-link a_aflog" href="../board/list">고객게시판</a>
+	                     </c:if>
 	                    </li>
 	                </ul>
 	                <div id="smallNav">
 	                	<c:if test="${profile == null}">
 		                    <a href="/profile/join"><span>Join</span></a>
 		                    <a href="/profile/login"><span>Login</span></a>
-		                    <a href="/" class="a_beflog"><span>Book</span></a>
+		                    <a href="" class="a_beflog"><span>Book</span></a>
 	                    </c:if>
 	                    <c:if test="${profile != null}">
 	                    	<span>${profile.id }님 환영합니다.</span>
@@ -54,12 +59,12 @@
 	    </nav>
     </div>
     <script>
+    	const board_a = document.querySelector(".bo_beflog");
     	const book_a = document.querySelector(".a_beflog");
-    	
     	function notMember(){
     		alert("로그인 후 이용가능한 기능입니다.");
     	}
     	
-    	
+    	board_a.addEventListener("click", notMember);
     	book_a.addEventListener("click", notMember);
     </script>
