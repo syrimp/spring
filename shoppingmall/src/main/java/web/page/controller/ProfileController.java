@@ -32,8 +32,8 @@ public class ProfileController {
 	}
 	
 	@PostMapping("/join")
-	public String join(String id,String pw, String address, String email, String name, String phone) {
-		service.join(id,pw,address,email,name,phone);
+	public String join(profileVO profile) {
+		service.join(profile);
 		return "/profile/login";
 	}
 	

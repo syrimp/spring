@@ -4,7 +4,7 @@ import web.page.domain.profileVO;
 
 public interface profileService {
 
-	public void join(String id,String pw, String address, String email, String name, String phone);
+	public void join(profileVO profile);
 	
 	public profileVO login(String id,String pw);
 	

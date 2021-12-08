@@ -15,15 +15,8 @@ public class profileServiceImpl implements profileService {
 	private profileMapper mapper;
 
 	@Override
-	public void join(String id,String pw, String address, String email, String name, String phone) {
+	public void join(profileVO profile) {
 		log.info("가입");
-		profileVO profile = new profileVO();
-		profile.setId(id);
-		profile.setAddress(address);
-		profile.setEmail(email);
-		profile.setPw(pw);
-		profile.setPhone(phone);
-		profile.setName(name);
 		mapper.join(profile);
 	}
 	

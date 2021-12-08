@@ -46,7 +46,6 @@ public class BoardController {
 		
 		@GetMapping("/modify")
 		public void modify(@RequestParam("bno") Long bno, Model model){
-			model.addAttribute("bno", bno);
 			model.addAttribute("board", service.get(bno));
 		}
 	

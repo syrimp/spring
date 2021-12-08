@@ -6,7 +6,7 @@
 <div id="board_wrap">
 		<div id="list_container">
 			<h1>Q&A</h1>
-			<form action="/modify" method="post">
+			<form action="/board/modify" method="post">
 				<table class="get_table">
 						<tr>
 							<th>글 번호</th><td><input type="text" name="bno" value="${board.bno }"></td>	

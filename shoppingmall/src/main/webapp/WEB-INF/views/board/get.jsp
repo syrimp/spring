@@ -25,7 +25,8 @@
 			</table>
 			
 			<form>
-				<button type="submit" formaction="/board/modify?bno=${board.bno }" formmethod="get">수정</button>
+				<a href="/board/list"><button type="button">목록</button></a>
+				<a href="/board/modify?bno=${board.bno }"><button type="button">수정</button></a>
 				<button type="submit" formaction="/board/remove?bno=${board.bno }" formmethod="post">삭제</button>
 			</form>
 		</div>
