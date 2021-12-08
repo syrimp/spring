@@ -44,11 +44,11 @@ public class ProfileController {
 		
 		if(login==null) {
 			session.setAttribute("profile", null);
-			rttr.addFlashAttribute("msg", false);
+			rttr.addFlashAttribute("msg", false);		
 			return "redirect:/profile/login";
 		} else {
 			session.setAttribute("profile", login);
-			rttr.addAttribute("sucess", true);
+			rttr.addAttribute("success", true);
 			return "redirect:/";
 		}
 	}	

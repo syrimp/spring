@@ -24,11 +24,11 @@
 					</tr>
 			</table>
 			
-			<form>
-				<a href="/board/list"><button type="button">목록</button></a>
-				<a href="/board/modify?bno=${board.bno }"><button type="button">수정</button></a>
-				<button type="submit" formaction="/board/remove?bno=${board.bno }" formmethod="post">삭제</button>
-			</form>
+			<a href="/board/list"><button type="button">목록</button></a>
+			<a href="/board/modify?bno=${board.bno }"><button type="button">수정</button></a>
+			<form action="/board/remove?bno=${board.bno}" method="post">
+				<button type="submit">삭제</button>
+			</form>	
 		</div>
 	</div>
 

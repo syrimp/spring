@@ -4,15 +4,18 @@
 <%@include file="../includes/header.jsp" %>
 	<div id="board_wrap">
 		<div id="list_container">
-			<h1>Q&A 등록</h1>
-			
-			<table class="register_table">
-				<form id="register_form">
-					<tr>
-						<th>제목</th>	<td><input type="text" name="title"/></td>
-						<th>내용</th><td><input type="text" name="content"/></td>
-					</tr>
-				</form>
-			</table>
+			<h1>글 등록</h1>
+			<form action="/board/register" id="register_form" method="post">
+				<table class="register_table">
+						<tr>
+							<th>제목</th>	<td><input type="text" name="title"/></td>
+							<th>내용</th><td><input type="text" name="content"/></td>
+						</tr>
+				</table>
+				<input type="hidden" name="id" value="${profile.id }"/>
+				<button type="submit">확인</button>
+			</form>
+		</div>
+	</div>
 </body>
 </html>

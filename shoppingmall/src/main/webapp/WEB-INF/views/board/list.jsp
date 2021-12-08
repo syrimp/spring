@@ -31,8 +31,8 @@
 				</tbody>
 			</table>
 		</div>
-		<form action="" id="list_form">
-			<a><button type="button" id="register" formaction="">글 등록</button></a>
+		<form id="list_form">
+			<a href="/board/register"><button type="button" id="register">글 등록</button></a>
 			
 		</form>
 	</div>
