@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import web.page.domain.BoardVO;
+import web.page.domain.Criteria;
 import web.page.service.BoardService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -41,7 +42,8 @@ public class BoardServiceTest {
 	
 	@Test
 	public void testGetList() {
-		service.getList().forEach(board ->log.info(board));
+//		service.getList().forEach(board ->log.info(board));
+		service.getList(new Criteria(2, 10)).forEach(board ->log.info(board));
 	}
 	
 	@Test

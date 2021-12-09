@@ -1,5 +1,7 @@
 package web.page.test;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import web.page.domain.BoardVO;
+import web.page.domain.Criteria;
 import web.page.mapper.BoardMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -55,6 +58,16 @@ public class BoardMapperTest {
 		board.setContent("수정된 내용");
 		
 		log.info("update count: "+mapper.update(board));
+	}
+	
+	@Test
+	public void testPaging() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(2);
+		cri.setAmount(10);
+		
+		List<BoardVO> list = mapper.getListWithPaging(cri);
+		list.forEach(board -> log.info(board.getBno()));
 	}
 	
 	

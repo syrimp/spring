@@ -7,12 +7,24 @@
   
   <select id="getList" resultType="web.page.domain.BoardVO"> <!-- 전체 목록 조회 -->
   	<![CDATA[
-  	select * from tbl_board where bno >0
+  		select * from tbl_board where bno >0
   	]]>
   </select>
   
+  <select id="getListWithPaging" resultType="web.page.domain.BoardVO">
+  	<![CDATA[
+  		SELECT * FROM
+			(SELECT  @rownum:=@rownum+1  rnum, A.* 
+			  FROM  tbl_board A, (SELECT @ROWNUM := 0) R
+			  WHERE 1=1
+			) list
+			WHERE rnum >= 1+(#{amount}*(#{pageNum}-1)) AND rnum <=(#{amount}*#{pageNum})
+  	]]>
+  </select>
+  
+
   <insert id="create">
-  	insert into tbl_board(title, bno, content, id,updatedate)
+  	insert into tbl_board(title, bno, content, id, updatedate)
   	values(#{title}, get_seq('bno'), #{content},#{id}, null)
   </insert>
   

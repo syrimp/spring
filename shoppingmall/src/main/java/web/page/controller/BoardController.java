@@ -1,5 +1,9 @@
 package web.page.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import web.page.domain.BoardVO;
+import web.page.domain.Criteria;
+import web.page.domain.pageDTO;
 import web.page.service.BoardService;
 
 @Controller
@@ -22,9 +28,10 @@ public class BoardController {
 		private BoardService service;
 		
 		@GetMapping("/list")
-		public void list(Model model) {
-			log.info("list");
-			model.addAttribute("list", service.getList());
+		public void list(Criteria cri, Model model) {
+			log.info("list: "+ cri);
+			model.addAttribute("list", service.getList(cri));
+			model.addAttribute("pageMaker", new pageDTO(cri, 123));
 		}
 		
 		@GetMapping("/register")
@@ -43,10 +50,14 @@ public class BoardController {
 		
 		
 		@GetMapping("/get")
-		public void get(@RequestParam("bno") Long bno, Model model) {
+		public void get(@RequestParam("bno") Long bno, HttpServletRequest req, Model model) {
+			HttpSession session = req.getSession();
 			log.info("/get");
 			model.addAttribute("bno", bno);
 			model.addAttribute("board", service.get(bno));
+			model.addAttribute("profile", session.getAttribute("profile"));
+			System.out.println(session.getAttribute("profile"));
+			System.out.println(service.get(bno));
 		}
 		
 		@GetMapping("/modify")
