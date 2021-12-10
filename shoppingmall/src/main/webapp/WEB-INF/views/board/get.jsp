@@ -4,6 +4,27 @@
 
 <%@include file="../includes/header.jsp" %>
 
+	<!-- Modal -->
+	<div class="modal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">글 삭제</h4>
+	      </div>
+	      <div class="modal-body">
+	      	  삭제하시겠습니까?
+	      </div>
+	      <div class="modal-footer">
+	     	 <form action="/board/remove?bno=${board.bno}" method="post">
+		     	<button type="submit" class="btn btn-primary">확인</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+	        </form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	<div id="board_wrap">
 		<div id="list_container">
 			<h1>Q&A</h1>
@@ -28,13 +49,17 @@
 			
 			<c:if test="${profile.id == board.id }">
 				<a href="/board/modify?bno=${board.bno }"><button type="button">수정</button></a><br/>
-				<form action="/board/remove?bno=${board.bno}" method="post">
-					<button type="submit">삭제</button>
-				</form>	
+				<button id="modal_btn" type="button" data-target="#deleteModal" data-toggle="modal">삭제</button>
 			</c:if>
 		</div>
 	</div>
-
-
+	<script>
+		$(document).ready(function(){
+			$('#modal_btn').click(function(){
+				$('#deleteModal').modal('show');
+			});
+		});
+	</script>
+	
 </body>
 </html>

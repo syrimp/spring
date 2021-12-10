@@ -58,6 +58,7 @@
 	        </div>
 	    </nav>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
     	const board_a = document.querySelector(".bo_beflog");
     	const book_a = document.querySelector(".a_beflog");
@@ -68,5 +69,5 @@
     	board_a.addEventListener("click", notMember);
     	book_a.addEventListener("click", notMember);
     </script>
+   
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

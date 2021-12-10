@@ -236,7 +236,7 @@ table tbody .tr_s td{
 	
 }
 
-.list_button #list_button_ul{
+#list_button_ul{
 	position: relative;
 	margin:0 auto;
 	list-style: none;
