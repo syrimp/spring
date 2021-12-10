@@ -235,3 +235,10 @@ table tbody .tr_s td{
 	margin: 0.3rem;
 	
 }
+
+.list_button #list_button_ul{
+	position: relative;
+	margin:0 auto;
+	list-style: none;
+	display : inline;
+}
