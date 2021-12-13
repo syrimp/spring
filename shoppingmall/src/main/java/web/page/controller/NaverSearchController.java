@@ -11,7 +11,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import web.page.domain.DbitemVO;
 import web.page.domain.itemVO;
+import web.page.service.GetItemApplication;
 import web.page.service.NaverShoppingAPIService;
 
 @Controller
@@ -21,6 +23,7 @@ import web.page.service.NaverShoppingAPIService;
 public class NaverSearchController {
 	
 	NaverShoppingAPIService service;
+	GetItemApplication search;
 	
 	@RequestMapping("/submit")
 	public String red(String keyword) {
@@ -59,8 +62,16 @@ public class NaverSearchController {
 	   }
 
 	
+	@RequestMapping("/save")
+	public String save() {
+		return "/search/keyncode";
+	}
 	
-	
+	@RequestMapping("/saving")
+	public String saving(String keyword, String code) {
+		search.searchResult(keyword, code);	
+		return "/search/mastersave";
+	}
 	
 	
 	

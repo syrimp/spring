@@ -5,9 +5,9 @@
 	<div id="board_wrap">
 		<h1>고객게시판</h1><br />
 		<div id="list_container">
-		<form id="list_form">
-			<a href="/board/register"><button type="button" id="register">글 등록</button></a>
-		</form>
+			<form id="list_form">
+				<a href="/board/register"><button type="button" id="register">글 등록</button></a>
+			</form><br/>
 			<table id="list_table">
 				<thead>
 					<tr>

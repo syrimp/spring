@@ -41,7 +41,7 @@ nav {
 
 .size{
   position: relative;
-  margin:10vh auto;
+  margin:5vh auto;
   padding: 20rem auto;
   width:80vw;
   text-align: center;
@@ -236,9 +236,6 @@ table tbody .tr_s td{
 }
 
 
-
-
-
 #input_id, #input_pw, #login_btn{
 	width: 50rem;
 	height: 3rem;
@@ -266,4 +263,3 @@ ul .nonliststyle{
 	text-decoration: none;
 	color : black;
 }
-	

@@ -93,5 +93,13 @@ public class BoardControllerTest {
 				.andReturn().getModelAndView().getModelMap());
 	}
 	
-	
+	@Test
+	public void testsave() throws Exception{
+		String  resultPage = mockMvc.perform(MockMvcRequestBuilders.get("/search/save")
+				.param("keyword", "패딩")
+				.param("code", "5a")
+				).andReturn().getModelAndView().getViewName();
+		
+		log.info(resultPage);
+	}
 }

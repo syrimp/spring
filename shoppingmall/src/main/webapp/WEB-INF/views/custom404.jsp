@@ -8,5 +8,8 @@
 </head>
 <body>
 	<h1>해당 URL은 존재하지 않습니다.</h1>
+	<img alt="404error" src="/resources/pablita-674.png" /><br/>
+	Illustration by <a href="https://icons8.com/illustrations/author/5eb2a7bd01d0360019f124e7">
+	Olha Khomich</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
 </body>
 </html>
