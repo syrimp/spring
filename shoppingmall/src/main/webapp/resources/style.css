@@ -2,6 +2,7 @@
 
 html, body{
   margin: 0 auto;
+  padding-top: 5rem;
 }
 
 #smallNav{
@@ -39,13 +40,16 @@ nav {
   }
 
 .size{
-  margin:8vh auto;
+  position: relative;
+  margin:10vh auto;
+  padding: 20rem auto;
   width:80vw;
   text-align: center;
 }
 .first-img {
   width: 80vw;
   height:70vh;
+  magin-top: 10rem;
 }
 .btn-outline-success {
   color: chocolate;
@@ -136,6 +140,12 @@ footer {
   word-break:keep-all;
 }
 
+.carousel-item img{
+	width: 1100px;
+	height: 700px;
+	margin : 3rem auto;
+	padding: 1rem;
+}
 /*------------printSearch----------------------------------*/
 
 #print_result{
