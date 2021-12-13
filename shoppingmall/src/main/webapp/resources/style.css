@@ -250,5 +250,20 @@ table tbody .tr_s td{
 	position: relative;
 	margin:0 auto;
 	list-style: none;
-	display : inline;
 }
+
+ul .nonliststyle{
+	display: inline-block;
+	word-spacing: 1rem;
+	margin: 0.5rem;
+	padding: 0.3rem;
+	border-radius: 0.5rem;
+	border: 1px dotted orange;
+}
+
+.nonliststyle a{
+	
+	text-decoration: none;
+	color : black;
+}
+	

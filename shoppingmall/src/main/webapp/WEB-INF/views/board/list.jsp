@@ -43,7 +43,7 @@
 				</c:if>
 				
 				<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-					<li id = "nonliststyle" class="list_button_li">
+					<li class = "nonliststyle" class="list_button_li">
 						<a href="${num }"><c:out value="${num }"/></a>
 					</li>				
 				</c:forEach>
@@ -61,7 +61,9 @@
 			<input type="hidden" name='amount' value="${pageMaker.cri.amount }">
 		</form>
 	</div>
-	<script>
+	
+<%@include file="../includes/footer.jsp" %>
+<script>
 		$(document).ready(function(){
 		    var actionForm = $("#actionForm");
 		    var a = $('li.list_button_li').find('a');
@@ -72,5 +74,3 @@
 		    });	
 		});
 	</script>
-</body>
-</html>

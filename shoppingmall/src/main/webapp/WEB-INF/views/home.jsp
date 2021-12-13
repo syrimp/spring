@@ -33,6 +33,7 @@
         </div>
     </div>
     <div class="campagine-section text-center mt-5 mb-5">
+        
         <h2>
             <div id="weather_txt">
             	오늘 날씨는? 
@@ -42,6 +43,7 @@
             <span class="humidity"> </span>
             </div>
         </h2>
+        
         <br/><p>
             	무슨 옷을 입어야 할까 고민하는 당신에게 지금 온도에 맞는 옷을 추천해드립니다.
         </p>
