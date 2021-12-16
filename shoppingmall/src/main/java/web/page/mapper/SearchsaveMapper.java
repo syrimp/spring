@@ -7,4 +7,6 @@ import web.page.domain.DbitemVO;
 public interface SearchsaveMapper {
 
 	public void searchSave(List<DbitemVO> list);
+	
+	public List<DbitemVO> suggestion(String temp);
 }

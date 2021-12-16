@@ -73,4 +73,16 @@ public class GetItemApplication {
         mapper.searchSave(list);  
 	}
 
+	public List<DbitemVO> printhome(String temp){
+		return mapper.suggestion(temp);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

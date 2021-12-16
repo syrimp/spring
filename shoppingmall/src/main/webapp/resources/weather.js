@@ -12,20 +12,20 @@ function onGeoOk(position){
         city.innerText = `${data.name}`;
         weather.innerText = `${data.main.temp}°C ${data.weather[0].main}`;
         humidity.innerText = `습도:${data.main.humidity}%`;
-        localStorage.setItem("city", city.innerText);
-        localStorage.setItem("weather", weather.innerText);
-        localStorage.setItem("humidity", humidity.innerText);
+        sessionStorage.setItem("city", city.innerText);
+        sessionStorage.setItem("weather", weather.innerText);
+        sessionStorage.setItem("humidity", humidity.innerText);
     });
 }
 function onGeoError(){
 alert("위치 정보를 찾을 수 없습니다.");
 }
 
-city.innerText= localStorage.getItem("city");
-weather.innerText = localStorage.getItem("weather");
-humidity.innerText= localStorage.getItem("humidity");
+city.innerText= sessionStorage.getItem("city");
+weather.innerText = sessionStorage.getItem("weather");
+humidity.innerText= sessionStorage.getItem("humidity");
 
-const savedWeather = localStorage.getItem("city");
+const savedWeather = sessionStorage.getItem("city");
 
 // if(savedWeather === null){
 //     navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);

@@ -47,8 +47,20 @@
         <br/><p>
             	무슨 옷을 입어야 할까 고민하는 당신에게 지금 온도에 맞는 옷을 추천해드립니다.
         </p>
+        <div id="print_result">
+			<div class="items">
+				<c:forEach var="nowtemp" items="${suggestion}" >
+					<div class="item">
+						<a href="${nowtemp.link }">
+							<img alt="${nowtemp.title }" src="${nowtemp.image }" /><br/>
+							<span id="title">${nowtemp.title }</span><br />
+							<span id="price">${nowtemp.lprice }원</span>
+						</a>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
         
-        <p>이 아래로 상품들 출력 예정입니다.</p>
     </div>
     <div class="container pt-5 pb-5">
         <div class="row">
@@ -81,7 +93,28 @@
             </div>
         </div>
     </div>
-
+	<form id="hidd_weather" action="/temp">
+		<input type="hidden" name="temp" value="" />
+		<input type="submit" id="sub_temp" />
+	</form>
     
 	<script src="/resources/weather.js"></script>
+	<script type="text/javascript">
+		const temp=	(sessionStorage.weather||'').split('°C',1);
+		const hiddIn = document.querySelector("#hidd_weather");
+		const val = hiddIn.querySelector("input");
+		const subTemp = document.querySelector("#sub_temp");
+		window.addEventListener("load", () => {
+			subTemp.click();
+		});
+		
+		subTemp.addEventListener('click', () => {
+			hiddIn.preventDefault;
+			val.setAttribute('value', temp);	
+			hiddIn.submit();
+		}, { once : true});
+		
+		
+
+	</script>
 	<%@include file="includes/footer.jsp" %>

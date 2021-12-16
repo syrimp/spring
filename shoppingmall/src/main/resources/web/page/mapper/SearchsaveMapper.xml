@@ -12,4 +12,7 @@
 	</foreach>
   </insert>
 
+	<select id="suggestion" resultType="web.page.domain.DbitemVO">
+  		select * from tbl_item where pcode LIKE #{temp+"_"}
+	</select>
   </mapper>
