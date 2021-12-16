@@ -4,9 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="web.page.mapper.SearchsaveMapper">
-   <insert id="searchSave">
-  	insert into tbl_item(pcode, pname, price, link, image)
-  	values(#{pcode}, #{pname}, #{price}, #{link},#{image})
+   <insert id="searchSave" parameterType="list">
+  	insert into tbl_item(pcode, pname, price, link, image) values 
+  	<foreach collection="list" item="item" index="index" >
+		<if test="index > 0">,</if>
+		(#{item.pcode}, #{item.pname}, #{item.price}, #{item.link},#{item.image})
+	</foreach>
   </insert>
-  
+
   </mapper>

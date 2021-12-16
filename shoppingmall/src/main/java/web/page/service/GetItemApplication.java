@@ -1,16 +1,19 @@
 package web.page.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.client.RestTemplate;
 
 import web.page.domain.DbitemVO;
@@ -18,6 +21,7 @@ import web.page.mapper.SearchsaveMapper;
 
 @Service
 public class GetItemApplication {
+	@Autowired
 	SearchsaveMapper mapper;
 	
 	public String search(String keyword) {
@@ -59,15 +63,14 @@ public class GetItemApplication {
              e.printStackTrace();
         }
 		
-        ArrayList<JSONObject> arr= (ArrayList<JSONObject>)obj.get("items");
+        List<JSONObject> arr= (ArrayList<JSONObject>)obj.get("items");
         
-        ArrayList<DbitemVO> list = new ArrayList<DbitemVO>();
+        List<DbitemVO> list = new ArrayList<DbitemVO>();
         for(JSONObject itemjson: arr) {
         	DbitemVO item = new DbitemVO(itemjson, code);
-        	mapper.searchSave(item);
+        	list.add(item);
         }
+        mapper.searchSave(list);  
 	}
-
-	
 
 }

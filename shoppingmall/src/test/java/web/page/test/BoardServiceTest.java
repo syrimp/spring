@@ -13,6 +13,7 @@ import lombok.extern.log4j.Log4j;
 import web.page.domain.BoardVO;
 import web.page.domain.Criteria;
 import web.page.service.BoardService;
+import web.page.service.GetItemApplication;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
@@ -21,6 +22,9 @@ public class BoardServiceTest {
 
 	@Setter(onMethod_= {@Autowired})
 	private BoardService service;
+	
+	@Setter(onMethod_= {@Autowired})
+	private GetItemApplication search;
 	
 	@Test
 	public void testExist() {
@@ -68,7 +72,11 @@ public class BoardServiceTest {
 	}
 	
 	
-	
+	@Test
+	public void testsave() {
+		search.searchResult("패딩", "5a");
+		
+	}
 	
 	
 	
